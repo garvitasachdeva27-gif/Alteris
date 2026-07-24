@@ -1,5 +1,5 @@
 import os
-from fastapi import FastAPI
+from fastapi import FastAPI, Response
 from fastapi.middleware.cors import CORSMiddleware
 from dotenv import load_dotenv
 
@@ -53,7 +53,14 @@ def read_root():
 @app.get("/health")
 def health_check():
     return {"status": "ok"}
+@app.head("/")
+def head_root():
+    return Response(status_code=200)
 
+
+@app.head("/health")
+def head_health():
+    return Response(status_code=200)
 
 app.include_router(auth.router, prefix="/auth", tags=["Authentication"])
 app.include_router(prompts.router, tags=["Prompts"])
