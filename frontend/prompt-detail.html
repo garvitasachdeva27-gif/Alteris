@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Test Prompt — Alteris</title>
+  <link rel="icon" type="image/png" href="logo.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <nav class="navbar">
+    <a href="index.html" class="nav-brand">
+      <img src="logo.png" alt="Alteris logo" class="nav-logo">
+      <span class="nav-title">Alteris</span>
+    </a>
+    <div class="nav-links">
+      <a href="dashboard.html" class="nav-link">← Back to Library</a>
+    </div>
+  </nav>
+
+  <main class="workspace">
+    <div class="workspace-header">
+      <h1 class="workspace-title" id="prompt-title-display">Loading...</h1>
+      <span class="prompt-card-category" id="prompt-category-display"></span>
+    </div>
+
+    <div class="workspace-grid">
+
+      <!-- Left: System prompt + test input -->
+      <div class="workspace-panel floating-card">
+        <label class="form-label">System Prompt</label>
+        <textarea id="system-prompt-view" class="form-input form-textarea" rows="8"></textarea>
+
+        <label class="form-label">Test Input (user message)</label>
+        <textarea id="test-input" class="form-input form-textarea" placeholder="Type a message to test this prompt against..." rows="4"></textarea>
+
+        <label class="form-label">Model</label>
+        <select id="model-select" class="form-input">
+          <option value="llama-3.1-8b-instant">Llama 3.1 8B (fastest)</option>
+          <option value="llama-3.3-70b-versatile">Llama 3.3 70B (most capable)</option>
+        </select>
+
+        <button class="btn btn-primary btn-full" id="run-btn">Run Prompt</button>
+        <p class="form-error" id="run-error"></p>
+      </div>
+
+      <!-- Right: Response -->
+      <div class="workspace-panel floating-card">
+        <label class="form-label">Response</label>
+        <div class="response-box" id="response-box">
+          <span class="response-placeholder">Run the prompt to see a response here.</span>
+        </div>
+        <div class="response-meta" id="response-meta"></div>
+      </div>
+
+    </div>
+
+    <!-- Analytics summary -->
+    <div class="analytics-strip" id="analytics-strip">
+      <div class="stat-card">
+        <span class="stat-value" id="stat-total-runs">—</span>
+        <span class="stat-label">Total Runs</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-value" id="stat-avg-tokens">—</span>
+        <span class="stat-label">Avg Tokens</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-value" id="stat-avg-latency">—</span>
+        <span class="stat-label">Avg Latency</span>
+      </div>
+    </div>
+
+    <!-- Version control -->
+    <div class="version-section">
+      <div class="version-header">
+        <h2 class="history-title">Versions</h2>
+        <div class="version-actions">
+          <input type="text" id="version-note" class="form-input" placeholder="Optional note (e.g. 'shorter tone')">
+          <button class="btn btn-secondary" id="save-version-btn">Save Current as Version</button>
+          <a href="#" id="compare-link" class="btn btn-secondary">Compare Versions</a>
+        </div>
+      </div>
+      <div id="version-list" class="history-list"></div>
+    </div>
+
+    <!-- History -->
+    <div class="history-section">
+      <h2 class="history-title">Execution History</h2>
+      <div id="history-list" class="history-list"></div>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

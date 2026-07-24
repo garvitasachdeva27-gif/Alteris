@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Insights — Alteris</title>
+  <link rel="icon" type="image/png" href="logo.png">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+</head>
+<body>
+
+  <nav class="navbar">
+    <a href="index.html" class="nav-brand">
+      <img src="logo.png" alt="Alteris logo" class="nav-logo">
+      <span class="nav-title">Alteris</span>
+    </a>
+    <div class="nav-links">
+      <a href="dashboard.html" class="nav-link">Library</a>
+      <a href="insights.html" class="nav-link nav-link-active">Insights</a>
+      <button class="btn btn-ghost" id="logout-btn">Log Out</button>
+    </div>
+  </nav>
+
+  <main class="dashboard">
+    <div class="dashboard-header">
+      <div>
+        <h1 class="dashboard-title">Insights</h1>
+        <p class="dashboard-subtitle">Usage and cost across all your prompts.</p>
+      </div>
+    </div>
+
+    <div class="analytics-strip" id="global-stats-strip">
+      <div class="stat-card">
+        <span class="stat-value" id="stat-total-prompts">—</span>
+        <span class="stat-label">Total Prompts</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-value" id="stat-total-runs-global">—</span>
+        <span class="stat-label">Total Runs</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-value" id="stat-total-tokens">—</span>
+        <span class="stat-label">Total Tokens</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-value" id="stat-total-cost">—</span>
+        <span class="stat-label">Estimated Cost</span>
+      </div>
+    </div>
+
+    <div class="charts-grid">
+      <div class="chart-card floating-card">
+        <h3 class="chart-title">Cost Over Time</h3>
+        <div id="cost-chart-empty" class="empty-state" style="display:none;">
+          <p>Run some prompts to see cost trends here.</p>
+        </div>
+        <canvas id="cost-chart"></canvas>
+      </div>
+
+      <div class="chart-card floating-card">
+        <h3 class="chart-title">Token Usage by Category</h3>
+        <div id="category-chart-empty" class="empty-state" style="display:none;">
+          <p>No usage data yet.</p>
+        </div>
+        <canvas id="category-chart"></canvas>
+      </div>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

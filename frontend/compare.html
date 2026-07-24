@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Compare Versions — Alteris</title>
+  <link rel="icon" type="image/png" href="logo.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <nav class="navbar">
+    <a href="index.html" class="nav-brand">
+      <img src="logo.png" alt="Alteris logo" class="nav-logo">
+      <span class="nav-title">Alteris</span>
+    </a>
+    <div class="nav-links">
+      <a href="#" id="back-link" class="nav-link">← Back to Prompt</a>
+    </div>
+  </nav>
+
+  <main class="workspace">
+    <div class="workspace-header">
+      <h1 class="workspace-title">A/B Comparison</h1>
+    </div>
+
+    <div class="compare-controls floating-card">
+      <div class="compare-selects">
+        <div>
+          <label class="form-label">Version A</label>
+          <select id="version-a-select" class="form-input"></select>
+        </div>
+        <div>
+          <label class="form-label">Version B</label>
+          <select id="version-b-select" class="form-input"></select>
+        </div>
+      </div>
+
+      <label class="form-label">Test Input</label>
+      <textarea id="compare-test-input" class="form-input form-textarea" rows="3" placeholder="Same input will be sent to both versions..."></textarea>
+
+      <button class="btn btn-primary" id="run-compare-btn">Run Comparison</button>
+      <p class="form-error" id="compare-error"></p>
+    </div>
+
+    <div class="compare-results">
+      <div class="workspace-panel floating-card">
+        <h3 class="compare-result-label" id="label-a">Version A</h3>
+        <div class="response-box" id="response-a">
+          <span class="response-placeholder">Run a comparison to see results.</span>
+        </div>
+        <div class="response-meta" id="meta-a"></div>
+      </div>
+
+      <div class="workspace-panel floating-card">
+        <h3 class="compare-result-label" id="label-b">Version B</h3>
+        <div class="response-box" id="response-b">
+          <span class="response-placeholder">Run a comparison to see results.</span>
+        </div>
+        <div class="response-meta" id="meta-b"></div>
+      </div>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

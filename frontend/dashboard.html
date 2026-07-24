@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard — Alteris</title>
+  <link rel="icon" type="image/png" href="logo.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <nav class="navbar">
+    <a href="index.html" class="nav-brand">
+      <img src="logo.png" alt="Alteris logo" class="nav-logo">
+      <span class="nav-title">Alteris</span>
+    </a>
+    <div class="nav-links">
+      <a href="dashboard.html" class="nav-link nav-link-active">Library</a>
+      <a href="insights.html" class="nav-link">Insights</a>
+      <span class="nav-user" id="user-email"></span>
+      <button class="btn btn-ghost" id="logout-btn">Log Out</button>
+    </div>
+  </nav>
+
+  <main class="dashboard">
+    <div class="dashboard-header">
+      <div>
+        <h1 class="dashboard-title">Prompt Library</h1>
+        <p class="dashboard-subtitle">All your saved prompts in one place.</p>
+      </div>
+      <button class="btn btn-primary" id="new-prompt-btn">+ New Prompt</button>
+    </div>
+
+    <div id="empty-state" class="empty-state" style="display:none;">
+      <p>No prompts yet. Create your first one to get started.</p>
+    </div>
+
+    <div class="prompt-grid" id="prompt-grid"></div>
+  </main>
+
+  <!-- New / Edit Prompt Modal -->
+  <div class="modal-overlay" id="prompt-modal" style="display:none;">
+    <div class="modal floating-card">
+      <h3 class="modal-title" id="modal-title">New Prompt</h3>
+      <form id="prompt-form">
+        <input type="hidden" id="prompt-id">
+
+        <label class="form-label">Title</label>
+        <input type="text" id="prompt-title" class="form-input" placeholder="e.g. Product Description Generator" required>
+
+        <label class="form-label">Category</label>
+        <input type="text" id="prompt-category" class="form-input" placeholder="General">
+
+        <label class="form-label">Prompt Content</label>
+        <textarea id="prompt-content" class="form-input form-textarea" placeholder="Write your prompt here..." required></textarea>
+
+        <div class="modal-actions">
+          <button type="button" class="btn btn-secondary" id="cancel-modal-btn">Cancel</button>
+          <button type="submit" class="btn btn-primary" id="save-prompt-btn">Save Prompt</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

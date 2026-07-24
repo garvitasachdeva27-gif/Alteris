@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up — Alteris</title>
+  <link rel="icon" type="image/png" href="logo.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <nav class="navbar">
+    <a href="index.html" class="nav-brand">
+      <img src="logo.png" alt="Alteris logo" class="nav-logo">
+      <span class="nav-title">Alteris</span>
+    </a>
+  </nav>
+
+  <main class="auth-page">
+    <div class="auth-card floating-card">
+      <h2 class="auth-title">Create your account</h2>
+      <p class="auth-subtitle">Start building better prompts today.</p>
+
+      <form id="signup-form" class="auth-form">
+        <label class="form-label">Email</label>
+        <input type="email" id="email" class="form-input" placeholder="you@example.com" required>
+
+        <label class="form-label">Password</label>
+        <input type="password" id="password" class="form-input" placeholder="At least 8 characters" required minlength="8">
+
+        <p id="signup-error" class="form-error"></p>
+
+        <button type="submit" class="btn btn-primary btn-full" id="signup-btn">Sign Up</button>
+      </form>
+
+      <p class="auth-switch">Already have an account? <a href="login.html">Log in</a></p>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
