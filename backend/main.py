@@ -23,12 +23,13 @@ app = FastAPI(
 # Locally, it falls back to common dev setups (opening index.html directly,
 # or serving it with a simple local server on port 5500/8080).
 FRONTEND_URL = os.getenv("FRONTEND_URL")
-allowed_origins = [FRONTEND_URL] if FRONTEND_URL else [
+
+allowed_origins = [
+    "https://alteris-delta.vercel.app",
     "http://127.0.0.1:5500",
     "http://localhost:5500",
     "http://127.0.0.1:8080",
     "http://localhost:8080",
-    "null",  # covers opening index.html directly as a file:// URL
 ]
 
 app.add_middleware(
