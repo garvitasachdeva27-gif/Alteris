@@ -413,6 +413,26 @@ body {
   border-color: var(--primary);
 }
 
+/* Ensure native select dropdown options are readable on dark theme */
+select.form-input,
+select.form-input option {
+  color: var(--white);
+  background: var(--card);
+}
+
+/* Improve focus/hover visibility in supported browsers */
+select.form-input:focus {
+  border-color: var(--primary);
+}
+
+/* When browsers show a highlighted option, ensure contrast */
+select.form-input option:checked,
+select.form-input option:focus,
+select.form-input option:hover {
+  background: rgba(94, 139, 255, 0.14);
+  color: var(--white);
+}
+
 .form-textarea {
   min-height: 140px;
   resize: vertical;
