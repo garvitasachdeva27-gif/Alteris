@@ -16,7 +16,7 @@ router = APIRouter()
 
 GROQ_API_KEY = os.getenv("GROQ_API_KEY")
 GROQ_API_URL = "https://api.groq.com/openai/v1/chat/completions"
-DEFAULT_MODEL = "llama-3.1-8b-instant"
+DEFAULT_MODEL = "openai/gpt-oss-20b"
 
 
 async def call_groq(system_prompt: str, user_message: str, model: str = DEFAULT_MODEL) -> dict:
