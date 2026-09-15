@@ -14,8 +14,8 @@ router = APIRouter()
 # NOTE: these are illustrative rates for this project -- check console.groq.com/pricing
 # for current figures before relying on this for real budgeting.
 MODEL_PRICING = {
-    "llama-3.1-8b-instant": {"input": 0.05, "output": 0.08},
-    "llama-3.3-70b-versatile": {"input": 0.59, "output": 0.79},
+    "openai/gpt-oss-20b": {"input": 0.05, "output": 0.08},
+    "openai/gpt-oss-120b": {"input": 0.59, "output": 0.79},
 }
 DEFAULT_PRICING = {"input": 0.10, "output": 0.10}  # fallback for unlisted models
 

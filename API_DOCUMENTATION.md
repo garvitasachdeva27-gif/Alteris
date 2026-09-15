@@ -40,7 +40,7 @@ All protected routes require a header: `Authorization: Bearer <token>`
 
 **Execute request body:**
 ```json
-{ "test_input": "A message to test the prompt with", "model": "llama-3.1-8b-instant" }
+{ "test_input": "A message to test the prompt with", "model": "openai/gpt-oss-20b" }
 ```
 
 ## Versions
@@ -63,7 +63,7 @@ All protected routes require a header: `Authorization: Bearer <token>`
   "test_input": "Same input sent to both versions",
   "version_a_id": null,
   "version_b_id": 3,
-  "model": "llama-3.1-8b-instant"
+  "model": "openai/gpt-oss-20b"
 }
 ```
 `null` for either version ID means "use the current live prompt."
